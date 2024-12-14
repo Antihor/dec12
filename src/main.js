@@ -62,6 +62,12 @@ async function onMore() {
   renderImages(data.hits);
   hideLoad();
   checkMore();
+
+  const height = refs.gallery.firstElementChild.getClientRects().height;
+  scrollBy({
+    behavior: 'smooth',
+    top: height * 2,
+  });
 }
 
 function renderImages(images) {
